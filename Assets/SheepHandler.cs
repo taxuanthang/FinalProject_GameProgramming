@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -32,7 +31,8 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 public class SheepHandler : MonoBehaviour
 {
-    [SerializeField] List<GameObject> sheepsObject;
+    public GameObject cube;
+    [SerializeField] List<GameObject> sheepsPrefab;
     private List<Sheep> sheeps;
     private Sheep targetSheep;
     public GameObject sheepArrow;
@@ -42,13 +42,13 @@ public class SheepHandler : MonoBehaviour
     {
         sheeps = new List<Sheep>() 
         {
-            new Sheep(sheepsObject[0],0,10),
-            new Sheep(sheepsObject[1],1,10),
-            new Sheep(sheepsObject[2],2,10),
+            new(Instantiate(sheepsPrefab[0],new Vector2(1,0),Quaternion.identity),0,10),
+            new(Instantiate(sheepsPrefab[1],new Vector2(1,0),Quaternion.identity),1,11),
+            new(Instantiate(sheepsPrefab[2],new Vector2(1,0),Quaternion.identity),2,12),
         };
-
+        
         targetSheep = sheeps[0];
-        print(sheeps.Count);
+
     }
     public void CharterControl()
     {
@@ -58,8 +58,9 @@ public class SheepHandler : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.A))
         {
-            vectorDir = new UnityEngine.Vector2(1, 0);
-            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Force);
+            vectorDir = new UnityEngine.Vector2(-1, 0);
+            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Impulse);
+            print(vectorDir);
         }
         //if (Input.GetKeyDown(KeyCode.S))
         //{
@@ -67,18 +68,19 @@ public class SheepHandler : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.D))
         {
-            vectorDir = new UnityEngine.Vector2(-1, 0);
-            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Force);
+            vectorDir = new UnityEngine.Vector2(1, 0);
+            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Impulse);
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             vectorDir = new UnityEngine.Vector2(0, 1);
-            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Force);
+            targetSheep.rb.AddForce(targetSheep.runspeed * vectorDir, ForceMode2D.Impulse);
         }
         
     }
     private void Update()
     {
         CharterControl();
+        print(targetSheep.sheepGameObject.transform.position);
     }
 }
