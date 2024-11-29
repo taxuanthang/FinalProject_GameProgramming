@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6772679345332275519}
   - component: {fileID: 4411245699503754336}
   - component: {fileID: 3544409720944856308}
+  - component: {fileID: -2671437392983132331}
   m_Layer: 0
   m_Name: Cuu1
   m_TagString: Sheep
@@ -158,3 +159,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-2671437392983132331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446729334559605489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1620d590214bd21458d3cbe4b8c815b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  number: 0
+  runspeed: 5
+  mass: 2
