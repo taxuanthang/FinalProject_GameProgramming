@@ -44,20 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56ec355a2d2388a4291acf3e97fac172, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bornPos:
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   sheeps:
-  - sheepsPrefab: {fileID: 446729334559605489, guid: 761d7cb8f721e8048922645156ace35e, type: 3}
-    number: 0
-    runspeed: 5
-    mass: 0
-    bornPos: {x: 0, y: 0}
-  - sheepsPrefab: {fileID: 3314024015320857100, guid: 1c135f7e3093bf742b4cf25c78d32e44, type: 3}
-    number: 0
-    runspeed: 4
-    mass: 0
-    bornPos: {x: 0, y: 0}
-  - sheepsPrefab: {fileID: 7744038188583102934, guid: 7e482c5f495b5d24cbd3f0f4684c88b6, type: 3}
-    number: 0
-    runspeed: 3
-    mass: 0
-    bornPos: {x: 0, y: 0}
+  - {fileID: -2671437392983132331, guid: 761d7cb8f721e8048922645156ace35e, type: 3}
+  - {fileID: -6933925463681162964, guid: 1c135f7e3093bf742b4cf25c78d32e44, type: 3}
+  - {fileID: 3563918067547201176, guid: 7e482c5f495b5d24cbd3f0f4684c88b6, type: 3}
   sheepArrow: {fileID: 8606127578802930862, guid: 4995e14c5168d9c41927a94e89feadc3, type: 3}
+  NumberSheepFlagged: 0
