@@ -34,7 +34,7 @@ using static UnityEditor.Timeline.TimelinePlaybackControls;
 public class SheepHandler : Singleton<SheepHandler>
 {
 
-    //public List<Vector2> bornPos;
+    public List<Vector2> bornPos;
     public List<Sheep> sheeps;
     private Sheep targetSheep;
     public GameObject sheepArrow;
@@ -50,7 +50,7 @@ public class SheepHandler : Singleton<SheepHandler>
         //sinh cuu
         for (int i = 0; i < sheeps.Count; i++)
         { 
-            sheeps[i]=GameObject.Instantiate(sheeps[i], this.gameObject.transform.position, Quaternion.identity);
+            sheeps[i]=GameObject.Instantiate(sheeps[i], bornPos[i], Quaternion.identity);
             sheeps[i].SetUp();
         }
 
